@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+  <head>
+    <style type="text/css">
+      body { background: #F5FCFF; color: #333666; }
+      section { text-align: center; margin: 50px 0; }
+      .panzoom-parent { border: 2px solid #333; }
+      .panzoom-parent .panzoom { border: 2px dashed #666; }
+      .buttons { margin: 40px 0 0; }
+    </style>
+    <script src="../test/libs/jquery.js"></script>
+    <script src="../dist/jquery.panzoom.js"></script>
+  </head>
+  <body>
+    <section>
+      <h1>Panning and zooming with CSS3</h1>
+      <div class="parent">
+        <div class="panzoom">
+          <img src="maillefer-1r.jpg" width="500" height="auto">
+        </div>
+      </div>
+      <div class="buttons">
+        <button class="zoom-in">Zoom In</button>
+        <button class="zoom-out">Zoom Out</button>
+        <input type="range" class="zoom-range">
+        <button class="reset">Reset</button>
+      </div>
+      <script>
+        (function() {
+          var $section = $('section');
+          $section.find('.panzoom').panzoom({
+            $zoomIn: $section.find(".zoom-in"),
+            $zoomOut: $section.find(".zoom-out"),
+            $zoomRange: $section.find(".zoom-range"),
+            $reset: $section.find(".reset")
+          });
+        })();
+      </script>
+    </section>
+
+  </body>
+</html>
